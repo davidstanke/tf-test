@@ -1,0 +1,15 @@
+# REQUIRED BUILDER: tf-gcloud
+# This build config uses a custom builder image in Cloud Build;
+# before invoking builds, publish the builder to your project,
+# by following the directions in the /cloudbuild-builder folder.
+
+steps:
+
+- id: 'tf apply'
+  name: 'gcr.io/$PROJECT_ID/tf-gcloud'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      terraform init
+      terraform apply -auto-approve
