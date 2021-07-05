@@ -1,4 +1,4 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:slim
 
 ARG VERSION=1.0.1
 
